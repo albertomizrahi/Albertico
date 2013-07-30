@@ -1,0 +1,25 @@
+<!--<div class="content"><img src="assets/mosaic_background.jpg" width="1680" height="1343" border="0" usemap="#map" /> -->
+<div style="width: 1920px;height: 1440px;">
+  <!--<map name="map">
+
+    <area shape="rect" coords="0,0,95,94" data-remote="true" data-type="application/javascript" />
+  </map>
+
+ <div class="modal" id="myModal">
+   Hello
+  </div>
+                               -->
+
+  <% @pictures.each do |pic| %>
+      <% if pic.isSponsored? %>
+          <%= link_to image_tag("tiles/#{pic.filename}", :alt => "Tile"), pic, :remote => true %>
+      <% else %>
+          <%= link_to image_tag("tiles/#{pic.filename}", :alt => "Tile", :class => "grayscale"), pic, :remote => true %>
+      <% end %>
+  <% end %>
+
+  <div id="basic-modal-content" class="picture_modal">
+  </div>
+
+
+</div>

@@ -7,6 +7,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk'
 gem 'pg'
+gem 'turbolinks'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
