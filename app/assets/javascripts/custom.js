@@ -12,8 +12,20 @@ $(document).ready(function(){
     //$('img not-sponsored').addClass("grayscale");
 
     $(window).load(function() {
-        $('img not-sponsored').addClass("grayscale");
+        $('img .not-sponsored').addClass("grayscale");
     });
 
+
+    var textPanels = $('.accordion-menu > .accordion-text').hide();
+
+    $('.accordion-menu > .accordion-header').click(function() {
+        var textPanelChosen = $(this).next();
+
+        if (!textPanelChosen.hasClass('active')){
+            textPanels.removeClass('active').slideUp('slow');
+            textPanelChosen.addClass('active').slideDown('slow');
+        }
+
+        });
 
 });

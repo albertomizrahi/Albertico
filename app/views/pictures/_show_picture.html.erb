@@ -1,2 +1,4 @@
 <%= image_tag "tiles/#{picture.filename}" %>
 <%= link_to "Add Color", picture, :method => :put %>
+<%= link_to "Donate", picture.paypal_url(pictures_url, payment_notifications_url) %>
+<%= button_tag "Hello", :class => "btn btn-success" %>

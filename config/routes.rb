@@ -1,5 +1,6 @@
 Albertico::Application.routes.draw do
   resources :pictures
+  resources :payment_notifications
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
