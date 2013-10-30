@@ -11,6 +11,8 @@ $(document).ready(function () {
         })
     });       */
 
+    alert("Test");
+
     var rowsAndColumns = 15;    //Number of rows and columns of picture tiles
 
     var divWidth = $('.picture-container').width(); //We determine the div's width in pixel (which should embark approx. 80% of the screen)
