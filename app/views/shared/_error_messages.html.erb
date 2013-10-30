@@ -1,0 +1,34 @@
+<% if object.errors.any? %>
+    <%
+       error_messages = object.errors.full_messages
+       #Both ifs check if email and password field were blanks in order to eliminate other redundant errors about them
+       if error_messages.include? ("Email can't be blank")
+         error_messages.delete("Email is invalid")
+       end
+
+       if error_messages.include? ("Password can't be blank")
+         error_messages.delete("Password is too short (minimum is 6 characters)")
+       end
+
+       #Modifies error message when user attaches file with invalid input or/and file size too big
+       if error_messages.include? ("Profile picture content type is invalid")
+         error_messages.delete("Profile picture content type is invalid")
+         error_messages.push("Attached file type is invalid. Only use .jpg or .png files")
+       end
+
+       if error_messages.include? ("Profile picture file size must be less than 3145728 Bytes")
+         error_messages.delete("Profile picture file size must be less than 3145728 Bytes")
+         error_messages.push("Attached file size must be less than 3 megabytes")
+       end
+    %>
+    <div id="error_explanation">
+      <div class="alert alert-error">
+        The form contains <%= pluralize(error_messages.count, "error") %>.
+      </div>
+      <ul>
+        <% error_messages.each do |msg| %>
+            <li>* <%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

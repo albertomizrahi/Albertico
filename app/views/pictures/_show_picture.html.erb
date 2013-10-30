@@ -1,4 +1,31 @@
-<%= image_tag "tiles/#{picture.filename}" %>
-<%= link_to "Add Color", picture, :method => :put %>
-<%= link_to "Donate", picture.paypal_url(pictures_url, payment_notifications_url) %>
-<%= button_tag "Hello", :class => "btn btn-success" %>
+
+<% if picture.isSponsored? %>
+
+    <p> Donado por: </p>
+    <h1> <%= picture.sponsor_name %> </h1>
+
+    <br />
+
+    <h3> <%= picture.sponsor_message %> </h3>
+
+    <% else %>
+
+<%= form_for(picture) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+
+    <%= f.label :sponsor_name, "Nombre del Donante:" %>
+    <%= f.text_field :sponsor_name %>
+
+
+    <br />
+
+    <%= f.label :sponsor_message, "Mensaje:" %>
+    <%= f.text_area :sponsor_message, :rows => "10"%>
+
+    <%= f.submit "Donar", :method => "update", :class => "btn btn-large btn-primary" %>
+
+<% end %>
+
+
+<% end %>

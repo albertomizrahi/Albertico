@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20130730211558) do
 
   create_table "pictures", force: true do |t|
     t.string   "filename"
-    t.string   "sponsor"
-    t.boolean  "isSponsored", default: false
-    t.string   "message"
+    t.string   "sponsor_name"
+    t.boolean  "isSponsored",     default: false
+    t.string   "sponsor_message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

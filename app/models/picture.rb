@@ -1,5 +1,4 @@
 class Picture < ActiveRecord::Base
-
   has_one :payment_notification
 
 

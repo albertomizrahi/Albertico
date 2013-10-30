@@ -1,2 +1,4 @@
-$('.picture_modal').html('<%= escape_javascript(render :partial => 'pictures/show_picture', :locals => { :picture => @picture}) %>');
-$('.picture_modal').modal()
+$('.picture-sidebar').html('<%= escape_javascript(render :partial => 'pictures/show_picture', :locals => { :picture => @picture}) %>');
+//$('.picture_modal').modal()
+$('.picture-sidebar').show();
+$('.accordion-menu').hide();
