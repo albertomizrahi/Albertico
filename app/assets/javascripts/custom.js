@@ -87,11 +87,12 @@ $(document).ready(function () {
     $(window).load(function() {
         if(!Modernizr.cssfilters && !Modernizr.svgfilters){
             grayscale ( $('.grayscale') );
+            //$('.grayscale').grayScale();
         }
 
     });
 
-    $('.grayscale').grayScale();
+
 
 
 
