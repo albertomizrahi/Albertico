@@ -1,3 +1,5 @@
+alert("Test no jquery");
+
 $(document).ready(function () {
 
     /*
@@ -11,7 +13,7 @@ $(document).ready(function () {
         })
     });       */
 
-    alert("Test");
+    alert("Test jquery");
 
     var rowsAndColumns = 15;    //Number of rows and columns of picture tiles
 

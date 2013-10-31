@@ -12,8 +12,9 @@
 //
 // require turbolinks
 //
-//= require modernizr-cssfilters
 //= require jquery
 //= require jquery_ujs
+//= require modernizr-cssfilters
+//= require grayscale
 //= require_tree .
 

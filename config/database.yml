@@ -17,3 +17,12 @@ test:
   username: amb110395
   password:
 
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: albertico_production
+  pool: 5
+  timeout: 5000
+  username: amb110395
+  password:
